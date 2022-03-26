@@ -21,5 +21,26 @@ public class LinkedList1 {
         linkedList.addFirst(5);
         linkedList.addFirst(7);
         linkedList.printList();
+
+
+        System.out.println("======================================");
+
+        System.out.println(" Display The Result of Add Last");
+        linkedList.addLast(15);
+        linkedList.addLast(20);
+        linkedList.printList();
+    }
+    // Add Last
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        if (head == null){
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode.next!=null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
     }
 }
