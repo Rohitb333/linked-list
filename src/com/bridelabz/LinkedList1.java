@@ -14,6 +14,46 @@ public class LinkedList1 {
         head = newNode;
     }
 
+    // Add Last
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        if (head == null){
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode.next!=null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
+    // Delete First
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        head = head.next;
+
+}
+    // Delete Last
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+    }
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         System.out.println("Display The List Result Add");
@@ -37,25 +77,11 @@ public class LinkedList1 {
 
         System.out.println("=======================================");
 
+
+        System.out.println(" Display The Result of Delete last");
+        linkedList.deleteLast();
+        linkedList.printList();
+
+        System.out.println("=======================================");
     }
-    // Add Last
-    public void addLast(int data){
-        Node newNode = new Node(data);
-        if (head == null){
-            head = newNode;
-            return;
-        }
-        Node currentNode = head;
-        while (currentNode.next!=null){
-            currentNode = currentNode.next;
-        }
-        currentNode.next = newNode;
-    }
-    // Delete First
-    public void deleteFirst() {
-        if (head == null) {
-            System.out.println("List is Empty");
-            return;
-        }
-        head = head.next;
 }
