@@ -29,6 +29,14 @@ public class LinkedList1 {
         linkedList.addLast(15);
         linkedList.addLast(20);
         linkedList.printList();
+
+        System.out.println("======================================");
+        System.out.println(" Display The Result of Delete First");
+        linkedList.deleteFirst();
+        linkedList.printList();
+
+        System.out.println("=======================================");
+
     }
     // Add Last
     public void addLast(int data){
@@ -43,4 +51,11 @@ public class LinkedList1 {
         }
         currentNode.next = newNode;
     }
+    // Delete First
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        head = head.next;
 }
